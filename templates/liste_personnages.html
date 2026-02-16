@@ -1,0 +1,44 @@
+{{define "liste_personnages"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Collection de Pirates</title>
+</head>
+<body>
+    <h1>L'Équipage de One Piece</h1>
+    <a href="/" class="btn-page">🏠 Accueil</a>
+
+    <form action="/collection" method="GET">
+        <input type="text" name="recherche" placeholder="Nom du pirate...">
+        <select name="statut">
+            <option value="">Tous les statuts</option>
+            <option value="Living">Vivant</option>
+            <option value="Deceased">Décédé</option>
+        </select>
+        <button type="submit" class="btn-page" style="border:none; cursor:pointer">Rechercher</button>
+    </form>
+
+    <ul>
+        {{range .Personnages}}
+        <li>
+            <h2>{{.Name}}</h2>
+            <p><strong>Rôle :</strong> {{.Job}}</p>
+            <p><strong>Prime :</strong> {{.Bounty}}</p>
+            <a href="/details?id={{.ID}}" style="color: #cc0000; font-weight: bold;">🔍 Détails</a>
+        </li>
+        {{end}}
+    </ul>
+
+    <div>
+        {{if gt .PageActuelle 1}}
+            <a class="btn-page" href="/collection?page={{.PagePrecedente}}{{.FiltresURL}}">Précédent</a>
+        {{end}}
+        <span style="font-weight: bold;">Page {{.PageActuelle}} sur {{.TotalPages}}</span>
+        {{if lt .PageActuelle .TotalPages}}
+            <a class="btn-page" href="/collection?page={{.PageSuivante}}{{.FiltresURL}}">Suivant</a>
+        {{end}}
+    </div>
+</body>
+</html>
+{{end}}

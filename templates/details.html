@@ -1,0 +1,24 @@
+{{define "details"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Détails - {{.Name}}</title>
+</head>
+<body>
+    <h1>Fiche Pirate</h1>
+    <div class="li">
+        <h2>{{.Name}}</h2>
+        <p><strong>Équipage :</strong> {{.Equipage.Name}}</p>
+        <p><strong>Rôle :</strong> {{.Job}}</p>
+        <p><strong>Statut :</strong> {{.Status}}</p>
+        <p><strong>Âge :</strong> {{.Age}}</p>
+        <p><strong>Fruit :</strong> {{if .Fruit.Name}}{{.Fruit.Name}}{{else}}Aucun{{end}}</p>
+        <p><strong>Prime :</strong> {{.Bounty}} Berrys</p>
+    </div>
+    <div style="margin-top: 20px;">
+        <a href="/collection" class="btn-page">🔙 Collection</a>
+    </div>
+</body>
+</html>
+{{end}}

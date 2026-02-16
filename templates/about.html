@@ -1,0 +1,83 @@
+{{define "about"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>À Propos - Documentation du Projet</title>
+    <style>
+        .faq-container {
+            margin-top: 20px;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #8b4513;
+            padding-bottom: 15px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            font-style: italic;
+            color: #3e2723;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Documentation & Gestion de Projet</h1>
+
+    <div class="li" style="max-width: 850px;">
+        <h2>Synthèse du projet (FAQ)</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <span class="faq-question">Comment avez-vous décomposé le projet ? Quelles ont été les phases clés ?</span>
+                <p class="faq-answer">
+                    Le projet a été structuré en quatre grosse étapes : 
+                    1. "L'exploration" (Connexion à l'API et récupération des données JSON). 
+                    2. "La navigation" (Mise en place du serveur Go et création des routes). 
+                    3. "La logique" (Développement de la logique de recherche, des filtres et de la pagination). 
+                    4. "La finalisation" (Habillage graphique en CSS et création des pages de contenu).
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <span class="faq-question">Comment avez-vous réparti les tâches et organisé le travail ?</span>
+                <p class="faq-answer">
+                    Je me suis organisé par "couches" : le développement du "Back-end" a été finalisé et testé avant de lancer la création du "Front-end". Cette méthode ma permis d'avoir une structure de données solide avant de m'occuper de l'affichage.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <span class="faq-question">Comment avez-vous géré votre temps et vos priorités ?</span>
+                <p class="faq-answer">
+                    Mon temps a été priorisé aux fonctionnalités obligatoires (FT1 : Recherche et FT2 : Filtres). Une fois cela fait, je me suis focus sur la pagination (FT3) pour garantir une navigation fluide sans erreur d'URL. Le design a été fait en dernier.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <span class="faq-question"> Quelle stratégie avez-vous adoptée pour vous documenter ?</span>
+                <p class="faq-answer">
+                    La documentation s'est appuyée sur les ressources officielles de "Golang". Pour les bugs complexes liés aux URL encodées, Certain forum tel que GeeksforGeeks m'ont permis de comprendre et de corriger rapidement les erreurs de logique.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; margin-bottom: 50px;">
+        <a href="/collection" class="btn-page">📜 Voir la Collection</a>
+        <a href="/" class="btn-page">🏠 Retour à l'accueil</a>
+
+    </div>
+</body>
+</html>
+{{end}}
