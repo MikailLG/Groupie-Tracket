@@ -31,4 +31,4 @@ Accès : Ouvrez votre navigateur sur http://localhost:8080
 
 Ce projet exploite une API dédiée à One Piece. Les endpoints utilisés sont :
 GET /characters : Récupération de l'intégralité des personnages.
-GET /characters/{id} : (Simulé via filtrage interne) pour les détails spécifiques.
+GET /characters/{id} : pour les détails spécifiques.
